@@ -1,0 +1,35 @@
+
+<a href="#/dash">Back to Dash</a>
+
+<h3>Question: {{question.question}}</h3>
+
+<!-- {{question}} -->
+
+<table>
+	<thead>
+		<tr><th>#</th><th>Option</th><th>Votes</th><th>Action</th></tr>
+	</thead>
+	<tbody>
+		<tr><td>1</td><td>{{question.option1}}</td>
+		<td>{{question.count1}}</td>
+		<td><a href=""><button ng-click="vote1()">Vote</button></a></td>
+		</tr>
+
+		<tr><td>2</td><td>{{question.option2}}</td>
+		<td>{{question.count2}}</td>
+		<td><a href=""><button ng-click="vote2()">Vote</button></a></td>
+		</tr>
+
+		<tr><td>3</td><td>{{question.option3}}</td>
+		<td>{{question.count3}}</td>
+		<td><a href=""><button ng-click="vote3()">Vote</button></a></td>
+		</tr>
+
+		<tr><td>4</td><td>{{question.option4}}</td>
+		<td>{{question.count4}}</td>
+		<td><a href=""><button ng-click="vote4()">Vote</button></a></td>
+		</tr>
+		
+	</tbody>
+</table>
+

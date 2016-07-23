@@ -14,5 +14,30 @@ var myApp = angular.module('Myapp', ['ngRoute']);
 				controller: 'indexController',
 				templateUrl: "partials/index.html"
 			})
+			.when('/logout', 
+			{
+				controller: 'indexController',
+				templateUrl: "partials/index.html"
+			})
+			.when('/dash', 
+			{
+				controller: 'dashController',
+				templateUrl: "partials/dash.html"
+			})
+			.when('/create', 
+			{
+				controller: 'createController',
+				templateUrl: "partials/create.html"
+			})
+			.when('/show/:id', 
+			{
+				controller: 'showController',
+				templateUrl: "partials/show.html"
+			})
+			.when('/delete/:id', 
+			{
+				controller: 'dashController',
+				templateUrl: "partials/dash.html"
+			})
 	})
 }());
