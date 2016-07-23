@@ -1,4 +1,4 @@
-var myApp = angular.module('Myapp', ['ngRoute']);
+var myApp = angular.module('Myapp', ['ngRoute', 'ngMessages']);
 // We instantiate our application and we inject ngrouter so that it's available
 // and so that we can use it to set up our routes below. 
 
@@ -39,5 +39,8 @@ var myApp = angular.module('Myapp', ['ngRoute']);
 				controller: 'dashController',
 				templateUrl: "partials/dash.html"
 			})
+			.otherwise({
+          redirectTo: '/'
+        });
 	})
 }());

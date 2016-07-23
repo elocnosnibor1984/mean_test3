@@ -12,6 +12,7 @@ module.exports = (function() {
 					res.json(err);
 				} else {
 					console.log("added poll to the db");
+					res.end();
 				}
 			})
 		},
@@ -25,6 +26,14 @@ module.exports = (function() {
 					res.json(surveys);
 				}
 			})
+		},
+
+		deletePoll: function(req, res){
+			surveyDb.remove({_id: req.params.id}, function(err, surveys){
+					console.log('got to deletePoll controller');
+					res.json(surveys);
+			})
+
 		},
 
 		getPoll: function(req, res){

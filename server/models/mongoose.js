@@ -1,16 +1,16 @@
 var mongoose = require('mongoose');
 var SurveySchema = new mongoose.Schema({
     name: String,
-    question: String,
-    option1: String,
-    count1: Number,
-    option2: String,
-    count2: Number,
-    option3: String,
-    count3: Number,
-    option4: String,
-    count4: Number
-});
+    question: {type:String,required:true},
+    option1: {type:String,required:true},
+    count1: {type: Number,required:true},
+    option2: {type:String,required:true},
+    count2: {type: Number,required:true},
+    option3: {type:String,required:true},
+    count3: {type: Number,required:true},
+    option4: {type:String,required:true},
+    count4: {type: Number,required:true}
+},{timestamps:true});
 
 mongoose.model('SurveyDb', SurveySchema);
 // Validations

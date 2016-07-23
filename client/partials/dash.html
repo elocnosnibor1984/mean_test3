@@ -1,18 +1,24 @@
 <h1>Polls</h1>
 
 <a href="#/create">Create Poll</a> | <a href="#/logout">Logout</a>
-<!-- {{questions}} -->
+{{questions}}
 <p><input type='text' ng-model='filter_name' placeholder='search...'></p>
 <table>
 	<thead>
-		<tr><th>Name</th><th>Question</th><th>Action</th></tr>
+		<tr>
+		<th>Name</th>
+		<th>Question</th>
+		<th>Date</th>
+		<th>Action</th>
+		</tr>
 	</thead>
 	<tbody>
 		<tr ng-repeat="q in questions | filter: filter_name">
 		<td>{{q.name}}</td>
 		<td><a href="#/show/{{q._id}}" >{{q.question}}</a></td>
-		<td ng-show="q.name == user.name"><button>Delete</button></td></tr>
+		<td>{{q.createdAt | date: "MMMM dd yyyy"}}</td>
+		<td ng-show="q.name == user.name"><button ng-click="delete(q._id)">Delete</button></td></tr>
 	</tbody>
 </table>
 
-<a href="#/show/adsasdfasdf">Show</a>
+<!-- <a href="#/show/adsasdfasdf">Show</a> -->

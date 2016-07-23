@@ -2,7 +2,7 @@ var mongoose = require('mongoose');
 
 var fs = require('fs');
 
-mongoose.connect('mongodb://localhost/MeanTest3');
+mongoose.connect('mongodb://localhost/Mean_Test3');
 
 var models_path = __dirname + "/../models"
 

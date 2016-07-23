@@ -22,11 +22,28 @@ myApp.controller('dashController', function($scope, $location, pollFactory){
 		})
 	}
 
-	$scope.delete = function(){
-		pollFactory.delete(function(data){
-			console.log("delete on dashController");
+	$scope.delete = function(id){
+		console.log("Delete on dashController", id);
+		pollFactory.delete(id, function(){
+			pollFactory.getQuestions(function(data){
+			console.log("got to getQuestions inside delete", data);
+			$scope.questions = data[0].data;
+		
+	})
 		})
 	}
+
+	// $scope.delete = function(id){
+	// 	console.log("Delete ID: ", id);
+	// 	pollFactory.delete(function(id, function(){
+	// 		pollFactory.getQuestions(function(data){
+	// 		console.log("got to dashController, get questions");
+	// 		$scope.questions = data[0].data;
+		
+	// })
+	// 	})
+	// 		callback(console.log("delete on dashController"));
+	// }
 
 	console.log('I am able to load my indexController along with my index partial');
 

@@ -11,7 +11,7 @@ myApp.factory('pollFactory', function($http){
 
 	factory.getUser =function(callback){
 		callback(user);
-	
+
 	}
 
 	factory.addQuestion = function(info, callback){
@@ -22,6 +22,14 @@ myApp.factory('pollFactory', function($http){
 				polls.push(data)
 				callback(polls);
 			}
+		})
+	}
+
+	factory.delete = function(id, callback){
+		console.log("Delete on Poll factory: ", id);
+		polls = [];
+		$http.delete('/delete/' + id).then(function(data){
+			callback();
 		})
 	}
 

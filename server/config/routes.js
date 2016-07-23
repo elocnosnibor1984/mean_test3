@@ -16,6 +16,11 @@ module.exports = function(app){
 	polls.getPoll(req, res);
 	})
 
+	app.delete('/delete/:id', function(req, res){
+	console.log("made it to app.get /delete");
+	polls.deletePoll(req, res);
+	})
+
 	app.get('/vote1/:id', function(req, res){
 	console.log("made it to vote1 on routes page");
 	polls.vote1(req, res);
